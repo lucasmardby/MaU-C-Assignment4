@@ -29,17 +29,17 @@
         private void InitializeComponent()
         {
             grpAddRecipe = new GroupBox();
-            lblNameRecipe = new Label();
-            txtNameRecipe = new TextBox();
-            btnAddIngredient = new Button();
-            lblCategory = new Label();
-            cmbFoodCategory = new ComboBox();
+            txtDescription = new TextBox();
             btnAddRecipe = new Button();
+            btnAddIngredient = new Button();
+            cmbFoodCategory = new ComboBox();
+            lblCategory = new Label();
+            txtNameRecipe = new TextBox();
+            lblNameRecipe = new Label();
             lstRecipe = new ListBox();
             lblListName = new Label();
             lblListCategory = new Label();
             lblNumOfIngredients = new Label();
-            txtDescription = new TextBox();
             grpAddRecipe.SuspendLayout();
             SuspendLayout();
             // 
@@ -59,21 +59,23 @@
             grpAddRecipe.TabStop = false;
             grpAddRecipe.Text = "Add new recipe";
             // 
-            // lblNameRecipe
+            // txtDescription
             // 
-            lblNameRecipe.AutoSize = true;
-            lblNameRecipe.Location = new Point(16, 37);
-            lblNameRecipe.Name = "lblNameRecipe";
-            lblNameRecipe.Size = new Size(91, 15);
-            lblNameRecipe.TabIndex = 0;
-            lblNameRecipe.Text = "Name of Recipe";
+            txtDescription.Location = new Point(16, 100);
+            txtDescription.Multiline = true;
+            txtDescription.Name = "txtDescription";
+            txtDescription.Size = new Size(336, 242);
+            txtDescription.TabIndex = 3;
             // 
-            // txtNameRecipe
+            // btnAddRecipe
             // 
-            txtNameRecipe.Location = new Point(125, 34);
-            txtNameRecipe.Name = "txtNameRecipe";
-            txtNameRecipe.Size = new Size(227, 23);
-            txtNameRecipe.TabIndex = 1;
+            btnAddRecipe.Location = new Point(16, 348);
+            btnAddRecipe.Name = "btnAddRecipe";
+            btnAddRecipe.Size = new Size(336, 23);
+            btnAddRecipe.TabIndex = 1;
+            btnAddRecipe.Text = "Add Recipe";
+            btnAddRecipe.UseVisualStyleBackColor = true;
+            btnAddRecipe.Click += btnAddRecipe_Click;
             // 
             // btnAddIngredient
             // 
@@ -83,6 +85,17 @@
             btnAddIngredient.TabIndex = 1;
             btnAddIngredient.Text = "Add Ingredients";
             btnAddIngredient.UseVisualStyleBackColor = true;
+            btnAddIngredient.Click += btnAddIngredient_Click;
+            // 
+            // cmbFoodCategory
+            // 
+            cmbFoodCategory.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbFoodCategory.FormattingEnabled = true;
+            cmbFoodCategory.Items.AddRange(new object[] { "Ricebowl", "Pasta", "Soup", "Fish", "Vegetarian", "Other" });
+            cmbFoodCategory.Location = new Point(125, 71);
+            cmbFoodCategory.Name = "cmbFoodCategory";
+            cmbFoodCategory.Size = new Size(99, 23);
+            cmbFoodCategory.TabIndex = 2;
             // 
             // lblCategory
             // 
@@ -93,28 +106,27 @@
             lblCategory.TabIndex = 2;
             lblCategory.Text = "Category";
             // 
-            // cmbFoodCategory
+            // txtNameRecipe
             // 
-            cmbFoodCategory.FormattingEnabled = true;
-            cmbFoodCategory.Location = new Point(125, 71);
-            cmbFoodCategory.Name = "cmbFoodCategory";
-            cmbFoodCategory.Size = new Size(99, 23);
-            cmbFoodCategory.TabIndex = 2;
+            txtNameRecipe.Location = new Point(125, 34);
+            txtNameRecipe.Name = "txtNameRecipe";
+            txtNameRecipe.Size = new Size(227, 23);
+            txtNameRecipe.TabIndex = 1;
             // 
-            // btnAddRecipe
+            // lblNameRecipe
             // 
-            btnAddRecipe.Location = new Point(16, 348);
-            btnAddRecipe.Name = "btnAddRecipe";
-            btnAddRecipe.Size = new Size(336, 23);
-            btnAddRecipe.TabIndex = 1;
-            btnAddRecipe.Text = "Add Recipe";
-            btnAddRecipe.UseVisualStyleBackColor = true;
+            lblNameRecipe.AutoSize = true;
+            lblNameRecipe.Location = new Point(16, 37);
+            lblNameRecipe.Name = "lblNameRecipe";
+            lblNameRecipe.Size = new Size(91, 15);
+            lblNameRecipe.TabIndex = 0;
+            lblNameRecipe.Text = "Name of Recipe";
             // 
             // lstRecipe
             // 
             lstRecipe.FormattingEnabled = true;
             lstRecipe.ItemHeight = 15;
-            lstRecipe.Location = new Point(393, 50);
+            lstRecipe.Location = new Point(370, 49);
             lstRecipe.Name = "lstRecipe";
             lstRecipe.Size = new Size(360, 304);
             lstRecipe.TabIndex = 1;
@@ -122,7 +134,7 @@
             // lblListName
             // 
             lblListName.AutoSize = true;
-            lblListName.Location = new Point(432, 22);
+            lblListName.Location = new Point(408, 22);
             lblListName.Name = "lblListName";
             lblListName.Size = new Size(39, 15);
             lblListName.TabIndex = 2;
@@ -131,7 +143,7 @@
             // lblListCategory
             // 
             lblListCategory.AutoSize = true;
-            lblListCategory.Location = new Point(539, 22);
+            lblListCategory.Location = new Point(524, 22);
             lblListCategory.Name = "lblListCategory";
             lblListCategory.Size = new Size(55, 15);
             lblListCategory.TabIndex = 3;
@@ -140,19 +152,11 @@
             // lblNumOfIngredients
             // 
             lblNumOfIngredients.AutoSize = true;
-            lblNumOfIngredients.Location = new Point(651, 22);
+            lblNumOfIngredients.Location = new Point(640, 22);
             lblNumOfIngredients.Name = "lblNumOfIngredients";
             lblNumOfIngredients.Size = new Size(102, 15);
             lblNumOfIngredients.TabIndex = 4;
             lblNumOfIngredients.Text = "No. of Ingredients";
-            // 
-            // txtDescription
-            // 
-            txtDescription.Location = new Point(16, 100);
-            txtDescription.Multiline = true;
-            txtDescription.Name = "txtDescription";
-            txtDescription.Size = new Size(336, 242);
-            txtDescription.TabIndex = 3;
             // 
             // FormMain
             // 

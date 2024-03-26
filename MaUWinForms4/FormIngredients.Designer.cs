@@ -28,12 +28,130 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "FormIngredients";
+            grpIngredient = new GroupBox();
+            lblNumIngredients = new Label();
+            txtNameIngredient = new TextBox();
+            lstIngredients = new ListBox();
+            btnAdd = new Button();
+            btnEdit = new Button();
+            btnDelete = new Button();
+            btnOk = new Button();
+            btnCancel = new Button();
+            grpIngredient.SuspendLayout();
+            SuspendLayout();
+            // 
+            // grpIngredient
+            // 
+            grpIngredient.Controls.Add(btnDelete);
+            grpIngredient.Controls.Add(lstIngredients);
+            grpIngredient.Controls.Add(btnEdit);
+            grpIngredient.Controls.Add(txtNameIngredient);
+            grpIngredient.Controls.Add(btnAdd);
+            grpIngredient.Location = new Point(12, 32);
+            grpIngredient.Name = "grpIngredient";
+            grpIngredient.Size = new Size(404, 278);
+            grpIngredient.TabIndex = 0;
+            grpIngredient.TabStop = false;
+            grpIngredient.Text = "Ingredients";
+            // 
+            // lblNumIngredients
+            // 
+            lblNumIngredients.AutoSize = true;
+            lblNumIngredients.Location = new Point(12, 9);
+            lblNumIngredients.Name = "lblNumIngredients";
+            lblNumIngredients.Size = new Size(127, 15);
+            lblNumIngredients.TabIndex = 1;
+            lblNumIngredients.Text = "Number of Ingredients";
+            // 
+            // txtNameIngredient
+            // 
+            txtNameIngredient.Location = new Point(6, 22);
+            txtNameIngredient.Name = "txtNameIngredient";
+            txtNameIngredient.Size = new Size(284, 23);
+            txtNameIngredient.TabIndex = 0;
+            // 
+            // lstIngredients
+            // 
+            lstIngredients.FormattingEnabled = true;
+            lstIngredients.ItemHeight = 15;
+            lstIngredients.Location = new Point(6, 51);
+            lstIngredients.Name = "lstIngredients";
+            lstIngredients.Size = new Size(284, 214);
+            lstIngredients.TabIndex = 1;
+            // 
+            // btnAdd
+            // 
+            btnAdd.Location = new Point(310, 22);
+            btnAdd.Name = "btnAdd";
+            btnAdd.Size = new Size(75, 23);
+            btnAdd.TabIndex = 2;
+            btnAdd.Text = "Add";
+            btnAdd.UseVisualStyleBackColor = true;
+            // 
+            // btnEdit
+            // 
+            btnEdit.Location = new Point(310, 51);
+            btnEdit.Name = "btnEdit";
+            btnEdit.Size = new Size(75, 23);
+            btnEdit.TabIndex = 3;
+            btnEdit.Text = "Edit";
+            btnEdit.UseVisualStyleBackColor = true;
+            // 
+            // btnDelete
+            // 
+            btnDelete.Location = new Point(310, 80);
+            btnDelete.Name = "btnDelete";
+            btnDelete.Size = new Size(75, 23);
+            btnDelete.TabIndex = 4;
+            btnDelete.Text = "Delete";
+            btnDelete.UseVisualStyleBackColor = true;
+            // 
+            // btnOk
+            // 
+            btnOk.Location = new Point(110, 316);
+            btnOk.Name = "btnOk";
+            btnOk.Size = new Size(75, 23);
+            btnOk.TabIndex = 2;
+            btnOk.Text = "Ok";
+            btnOk.UseVisualStyleBackColor = true;
+            // 
+            // btnCancel
+            // 
+            btnCancel.Location = new Point(227, 316);
+            btnCancel.Name = "btnCancel";
+            btnCancel.Size = new Size(75, 23);
+            btnCancel.TabIndex = 3;
+            btnCancel.Text = "Cancel";
+            btnCancel.UseVisualStyleBackColor = true;
+            // 
+            // FormIngredients
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(432, 359);
+            Controls.Add(btnCancel);
+            Controls.Add(btnOk);
+            Controls.Add(lblNumIngredients);
+            Controls.Add(grpIngredient);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            Name = "FormIngredients";
+            Text = "FormIngredients";
+            grpIngredient.ResumeLayout(false);
+            grpIngredient.PerformLayout();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
+
+        private GroupBox grpIngredient;
+        private Button btnDelete;
+        private ListBox lstIngredients;
+        private Button btnEdit;
+        private TextBox txtNameIngredient;
+        private Button btnAdd;
+        private Label lblNumIngredients;
+        private Button btnOk;
+        private Button btnCancel;
     }
 }

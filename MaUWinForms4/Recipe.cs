@@ -7,13 +7,38 @@
         private string name;
         private string[] ingredients;
 
-        public FoodCategory Category 
-            { get; set; }
+        public FoodCategory Category
+        { 
+            get { return category; }
+            set { category = value; }
+        }
         public string Description
-            { get; set; }
+        {
+            get { return description; }
+            set { description = value; }
+        }
         public string Name
-            { get; set; }
+        {
+            get { return name; }
+            set { name = value; }
+        }
         public string[] Ingredients
-            { get; set; }
+        {
+            get { return ingredients; }
+            set { ingredients = value; }
+        }
+
+        public Recipe(int maxNumOfIngredients)
+        {
+
+        }
+
+        public int CurrentNumberOfIngredients()
+        {
+            //
+            return 1;
+        }
+
+
     }
 }

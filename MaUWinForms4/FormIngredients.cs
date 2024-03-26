@@ -1,18 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
-namespace MaUWinForms4
+﻿namespace MaUWinForms4
 {
     public partial class FormIngredients : Form
     {
-        public FormIngredients()
+        /*
+        private Recipe recipe = new Recipe();
+
+        public Recipe Recipe 
+        { 
+            get { return recipe; } 
+            set { recipe = value; }
+        }
+        */
+
+        public FormIngredients(Recipe recipe)
         {
             InitializeComponent();
         }

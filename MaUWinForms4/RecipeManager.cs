@@ -8,5 +8,14 @@
         {
             recipeList = new Recipe[maxNumOfElements];
         }
+
+        public bool Add(Recipe recipe)
+        {
+            return true;
+        }
+        public bool Add(string name, FoodCategory category, string[] ingredients)
+        {
+            return true;
+        }
     }
 }
