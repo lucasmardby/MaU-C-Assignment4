@@ -27,16 +27,31 @@
             get { return ingredients; }
             set { ingredients = value; }
         }
+        public static int MaxNumOfIngredients 
+        {
+            get;
+            //??
+        }
 
         public Recipe(int maxNumOfIngredients)
         {
-
+            ingredients = new string[200];
         }
 
         public int CurrentNumberOfIngredients()
         {
-            //
-            return 1;
+            int numberOfIngredients = 0;
+
+            for (int i = 0; i < Ingredients.Length; i++)
+            {
+                if (ingredients[i].IsNotNullOrEmpty())
+                {
+                    numberOfIngredients++;
+                }
+                numberOfIngredients++;
+            }
+
+            return numberOfIngredients;
         }
 
 

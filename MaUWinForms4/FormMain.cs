@@ -2,11 +2,11 @@ namespace MaUWinForms4
 {
     public partial class FormMain : Form
     {
-        private const int maxNumberOfElements = 50;
-        private const int maxNumberOfIngredients = 200;
+        const int maxNumberOfElements = 50;
+        const int maxNumberOfIngredients = 200;
         private RecipeManager[] recipeMngr;
 
-        private Recipe currentRecipe = new Recipe(maxNumberOfIngredients);
+        private Recipe currentRecipe = new Recipe (maxNumberOfIngredients);
 
         public FormMain()
         {
@@ -15,12 +15,13 @@ namespace MaUWinForms4
         }
 
         private void InitializeGUI()
-        { 
-            
+        {
+            cmbFoodCategory.DataSource = Enum.GetValues(typeof(FoodCategory));
         }
         private void UpdateGUI()
         {
             lstRecipe.Items.Add($"{currentRecipe.Name}");
+            lstRecipe.Items.Add($"{currentRecipe.Ingredients[currentRecipe.CurrentNumberOfIngredients()]}");
         }
 
         private void btnAddIngredient_Click(object sender, EventArgs e)
@@ -41,8 +42,11 @@ namespace MaUWinForms4
         {
             currentRecipe.Name = txtNameRecipe.Text;
             currentRecipe.Description = txtDescription.Text;
+            //currentRecipe.Category = cmbFoodCategory.SelectedItem;
+            //currentRecipe.Ingredients = ??
 
             UpdateGUI();
         }
+
     }
 }
