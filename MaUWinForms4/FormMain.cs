@@ -20,8 +20,10 @@ namespace MaUWinForms4
         }
         private void UpdateGUI()
         {
-            lstRecipe.Items.Add($"{currentRecipe.Name}");
-            lstRecipe.Items.Add($"{currentRecipe.Ingredients[currentRecipe.CurrentNumberOfIngredients()]}");
+            string listboxString = String.Format("{0,-15} {1,-9} {2,10}  ",
+            currentRecipe.Name, currentRecipe.Category, currentRecipe.CurrentNumberOfIngredients());
+
+            lstRecipe.Items.Add(listboxString);
         }
 
         private void btnAddIngredient_Click(object sender, EventArgs e)

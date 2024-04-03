@@ -126,7 +126,7 @@
             // 
             lstRecipe.FormattingEnabled = true;
             lstRecipe.ItemHeight = 15;
-            lstRecipe.Location = new Point(370, 49);
+            lstRecipe.Location = new Point(396, 46);
             lstRecipe.Name = "lstRecipe";
             lstRecipe.Size = new Size(360, 304);
             lstRecipe.TabIndex = 1;

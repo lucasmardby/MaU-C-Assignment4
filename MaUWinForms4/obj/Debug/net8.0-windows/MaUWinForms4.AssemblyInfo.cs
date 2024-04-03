@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MaUWinForms4")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+23a67845e18cc25814f3b4884f69ced41449d703")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4ba3ec9d68257c6afd9d142f1df8cf178c1ed3b1")]
 [assembly: System.Reflection.AssemblyProductAttribute("MaUWinForms4")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MaUWinForms4")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
