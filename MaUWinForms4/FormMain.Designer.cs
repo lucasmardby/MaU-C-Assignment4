@@ -40,7 +40,9 @@
             lblListName = new Label();
             lblListCategory = new Label();
             lblNumOfIngredients = new Label();
-            button1 = new Button();
+            btnDelete = new Button();
+            btnClear = new Button();
+            btnEdit = new Button();
             grpAddRecipe.SuspendLayout();
             SuspendLayout();
             // 
@@ -161,22 +163,43 @@
             lblNumOfIngredients.TabIndex = 4;
             lblNumOfIngredients.Text = "No. of Ingredients";
             // 
-            // button1
+            // btnDelete
             // 
-            button1.Location = new Point(667, 360);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 66);
-            button1.TabIndex = 5;
-            button1.Text = "Test";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            btnDelete.Location = new Point(558, 383);
+            btnDelete.Name = "btnDelete";
+            btnDelete.Size = new Size(96, 23);
+            btnDelete.TabIndex = 4;
+            btnDelete.Text = "Delete";
+            btnDelete.UseVisualStyleBackColor = true;
+            btnDelete.Click += btnDelete_Click;
+            // 
+            // btnClear
+            // 
+            btnClear.Location = new Point(660, 383);
+            btnClear.Name = "btnClear";
+            btnClear.Size = new Size(96, 23);
+            btnClear.TabIndex = 5;
+            btnClear.Text = "Clear Selection";
+            btnClear.UseVisualStyleBackColor = true;
+            btnClear.Click += btnClear_Click;
+            // 
+            // btnEdit
+            // 
+            btnEdit.Location = new Point(396, 383);
+            btnEdit.Name = "btnEdit";
+            btnEdit.Size = new Size(96, 23);
+            btnEdit.TabIndex = 6;
+            btnEdit.Text = "Edit";
+            btnEdit.UseVisualStyleBackColor = true;
             // 
             // FormMain
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(768, 450);
-            Controls.Add(button1);
+            Controls.Add(btnEdit);
+            Controls.Add(btnClear);
+            Controls.Add(btnDelete);
             Controls.Add(lblNumOfIngredients);
             Controls.Add(lblListCategory);
             Controls.Add(lblListName);
@@ -206,6 +229,8 @@
         private Label lblListCategory;
         private Label lblNumOfIngredients;
         private TextBox txtDescription;
-        private Button button1;
+        private Button btnDelete;
+        private Button btnClear;
+        private Button btnEdit;
     }
 }

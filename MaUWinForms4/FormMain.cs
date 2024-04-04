@@ -29,20 +29,6 @@ namespace MaUWinForms4
             lstRecipe.Items.Add(listboxString);
         }
 
-        private void btnAddIngredient_Click(object sender, EventArgs e)
-        {
-            FormIngredients dlg = new FormIngredients(currentRecipe);
-            DialogResult dlgResult = dlg.ShowDialog();
-
-            if (dlgResult == DialogResult.OK)
-            {
-                if (currentRecipe.CurrentNumberOfIngredients() <= 0)
-                {
-                    MessageBox.Show("No ingredients specified", "Error");
-                }
-            }
-        }
-
         private void btnAddRecipe_Click(object sender, EventArgs e)
         {
             if (currentRecipe.CurrentNumberOfIngredients() > 0)
@@ -63,19 +49,50 @@ namespace MaUWinForms4
             }
 
         }
+        private void btnAddIngredient_Click(object sender, EventArgs e)
+        {
+            FormIngredients dlg = new FormIngredients(currentRecipe);
+            DialogResult dlgResult = dlg.ShowDialog();
+
+            if (dlgResult == DialogResult.OK)
+            {
+                if (currentRecipe.CurrentNumberOfIngredients() <= 0)
+                {
+                    MessageBox.Show("No ingredients specified", "Error");
+                }
+            }
+        }
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (lstRecipe.SelectedIndex >= 0)
+            {
+                recipeMngr.DeleteElement(lstRecipe.SelectedIndex);
+                lstRecipe.Items.Remove(lstRecipe.SelectedItem);
+            }
+
+        }
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            lstRecipe.ClearSelected();
+        }
 
         private void lstRecipe_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            recipeMngr.GetRecipeAt();
+            Recipe recipe = recipeMngr.GetRecipeAt(lstRecipe.SelectedIndex);
+
+            string ingredients = "";
+            for (var i = 0; i < recipe.CurrentNumberOfIngredients(); i++)
+            {
+                ingredients += $"{recipe.Ingredients[i]}, ";
+            }
+
+            MessageBox.Show($"INGREDIENTS\n{ingredients}\n\n{recipe.Description}", $"Cooking Instructions - {recipe.Name}");
         }
         private void lstRecipe_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+            //listIndex = lstRecipe.SelectedIndex;
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
+        
     }
 }
