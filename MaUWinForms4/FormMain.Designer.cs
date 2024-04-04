@@ -40,6 +40,7 @@
             lblListName = new Label();
             lblListCategory = new Label();
             lblNumOfIngredients = new Label();
+            button1 = new Button();
             grpAddRecipe.SuspendLayout();
             SuspendLayout();
             // 
@@ -130,6 +131,8 @@
             lstRecipe.Name = "lstRecipe";
             lstRecipe.Size = new Size(360, 304);
             lstRecipe.TabIndex = 1;
+            lstRecipe.SelectedIndexChanged += lstRecipe_SelectedIndexChanged;
+            lstRecipe.MouseDoubleClick += lstRecipe_MouseDoubleClick;
             // 
             // lblListName
             // 
@@ -158,11 +161,22 @@
             lblNumOfIngredients.TabIndex = 4;
             lblNumOfIngredients.Text = "No. of Ingredients";
             // 
+            // button1
+            // 
+            button1.Location = new Point(667, 360);
+            button1.Name = "button1";
+            button1.Size = new Size(75, 66);
+            button1.TabIndex = 5;
+            button1.Text = "Test";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
             // FormMain
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(768, 450);
+            Controls.Add(button1);
             Controls.Add(lblNumOfIngredients);
             Controls.Add(lblListCategory);
             Controls.Add(lblListName);
@@ -192,5 +206,6 @@
         private Label lblListCategory;
         private Label lblNumOfIngredients;
         private TextBox txtDescription;
+        private Button button1;
     }
 }

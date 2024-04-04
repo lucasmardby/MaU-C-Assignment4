@@ -20,7 +20,12 @@
         public string Name
         {
             get { return name; }
-            set { name = value; }
+            set { 
+                if (value.IsNotNullOrEmpty())
+                { 
+                    name = value; 
+                }
+            }
         }
         public string[] Ingredients
         {

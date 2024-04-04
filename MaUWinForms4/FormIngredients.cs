@@ -19,7 +19,6 @@
         private void UpdateGUI()
         {
             lstIngredients.Items.Add($"{recipe.Ingredients[Recipe.CurrentNumberOfIngredients() - 1]}");
-
             txtNameIngredient.Text = string.Empty;
         }
 
@@ -29,19 +28,21 @@
 
             UpdateGUI();
         }
-        private void btnDelete_Click(object sender, EventArgs e)
+        private void btnOk_Click(object sender, EventArgs e)
         {
-            //
+            this.Close();
         }
-
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
-        private void btnOk_Click(object sender, EventArgs e)
+        private void btnEdit_Click(object sender, EventArgs e)
         {
-            this.Close();
+            //
+        }
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            //
         }
     }
 }
