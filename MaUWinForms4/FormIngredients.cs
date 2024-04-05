@@ -14,6 +14,18 @@
         {
             Recipe = recipe;
             InitializeComponent();
+            InitializeGUI();
+        }
+
+        private void InitializeGUI()
+        {
+            if (recipe.Ingredients[0] != null)
+            {
+                for (var i = 0; i < recipe.Ingredients[Recipe.CurrentNumberOfIngredients() - 1].Length; i++)
+                {
+                    lstIngredients.Items.Add($"{recipe.Ingredients[i]}");
+                }
+            }
         }
 
         private void UpdateGUI()
