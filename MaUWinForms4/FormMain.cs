@@ -16,6 +16,7 @@ namespace MaUWinForms4
 
         private void InitializeGUI()
         {
+            lstRecipe.Items.Clear();
             cmbFoodCategory.DataSource = Enum.GetValues(typeof(FoodCategory));
             
             btnEdit.Visible = false;
@@ -85,7 +86,6 @@ namespace MaUWinForms4
 
                     FormIngredients formIngredients = new FormIngredients(currentRecipe);
                     formIngredients.Text = currentRecipe.Name;
-
                 }
 
                 btnAddRecipe.Visible = false;
@@ -122,6 +122,14 @@ namespace MaUWinForms4
         private void btnClear_Click(object sender, EventArgs e)
         {
             lstRecipe.ClearSelected();
+
+            if (btnEditFinish.Visible == true)
+            {
+                ////
+
+                btnEditFinish.Visible = false;
+            }
+
         }
 
         private void lstRecipe_MouseDoubleClick(object sender, MouseEventArgs e)
@@ -136,11 +144,6 @@ namespace MaUWinForms4
 
             MessageBox.Show($"INGREDIENTS\n{ingredients}\n\n{recipe.Description}", $"Cooking Instructions - {recipe.Name}");
         }
-        private void lstRecipe_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            //listIndex = lstRecipe.SelectedIndex;
-        }
-
         
     }
 }

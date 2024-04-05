@@ -134,7 +134,6 @@
             lstRecipe.Name = "lstRecipe";
             lstRecipe.Size = new Size(360, 304);
             lstRecipe.TabIndex = 1;
-            lstRecipe.SelectedIndexChanged += lstRecipe_SelectedIndexChanged;
             lstRecipe.MouseDoubleClick += lstRecipe_MouseDoubleClick;
             // 
             // lblListName
