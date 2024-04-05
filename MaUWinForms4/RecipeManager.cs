@@ -31,7 +31,7 @@
         public void DeleteElement(int index)
         {
             recipeList[index] = null;
-            if (recipeList.Length > 0)
+            if (numOfElements > 0)
             {
                 numOfElements--;
             }
@@ -39,7 +39,12 @@
         }
         public Recipe GetRecipeAt(int index)
         {
-            Recipe recipe = recipeList[index];
+            Recipe recipe = recipeList[0];
+
+            if (numOfElements > 0 && index >= 0)
+            {
+                recipe = recipeList[index];
+            }
             return recipe;
         }
         private void MoveElementsOneStepLeft(int index)
@@ -52,8 +57,8 @@
             recipeList[recipeList.Length - 1] = null;
         }
         public void ChangeElement(int index, Recipe recipe)
-        { 
-            
+        {
+            recipeList[index] = recipe;
         }
     }
 }

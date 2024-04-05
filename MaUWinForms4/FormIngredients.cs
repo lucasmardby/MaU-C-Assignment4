@@ -24,10 +24,13 @@
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            recipe.AddIngredient(txtNameIngredient.Text);
-            lstIngredients.Items.Add($"{recipe.Ingredients[Recipe.CurrentNumberOfIngredients() - 1]}");
+            if (recipe != null)
+            {
+                recipe.AddIngredient(txtNameIngredient.Text);
+                lstIngredients.Items.Add($"{recipe.Ingredients[Recipe.CurrentNumberOfIngredients() - 1]}");
 
-            UpdateGUI();
+                UpdateGUI();
+            }
         }
         private void btnOk_Click(object sender, EventArgs e)
         {
@@ -42,9 +45,9 @@
         {
             if (lstIngredients.SelectedIndex >= 0)
             {
-                bool test = recipe.ChangeIngredient(lstIngredients.SelectedIndex, txtNameIngredient.Text);
+                bool validInput = recipe.ChangeIngredient(lstIngredients.SelectedIndex, txtNameIngredient.Text);
 
-                if (test)
+                if (validInput)
                 {
                     lstIngredients.Items[lstIngredients.SelectedIndex] = txtNameIngredient.Text.Trim();
                 }

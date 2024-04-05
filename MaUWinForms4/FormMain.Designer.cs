@@ -43,6 +43,7 @@
             btnDelete = new Button();
             btnClear = new Button();
             btnEdit = new Button();
+            btnEditFinish = new Button();
             grpAddRecipe.SuspendLayout();
             SuspendLayout();
             // 
@@ -165,7 +166,7 @@
             // 
             // btnDelete
             // 
-            btnDelete.Location = new Point(558, 383);
+            btnDelete.Location = new Point(558, 360);
             btnDelete.Name = "btnDelete";
             btnDelete.Size = new Size(96, 23);
             btnDelete.TabIndex = 4;
@@ -175,7 +176,7 @@
             // 
             // btnClear
             // 
-            btnClear.Location = new Point(660, 383);
+            btnClear.Location = new Point(660, 360);
             btnClear.Name = "btnClear";
             btnClear.Size = new Size(96, 23);
             btnClear.TabIndex = 5;
@@ -185,18 +186,30 @@
             // 
             // btnEdit
             // 
-            btnEdit.Location = new Point(396, 383);
+            btnEdit.Location = new Point(408, 360);
             btnEdit.Name = "btnEdit";
             btnEdit.Size = new Size(96, 23);
             btnEdit.TabIndex = 6;
             btnEdit.Text = "Edit";
             btnEdit.UseVisualStyleBackColor = true;
+            btnEdit.Click += btnEdit_Click;
+            // 
+            // btnEditFinish
+            // 
+            btnEditFinish.Location = new Point(408, 389);
+            btnEditFinish.Name = "btnEditFinish";
+            btnEditFinish.Size = new Size(96, 23);
+            btnEditFinish.TabIndex = 7;
+            btnEditFinish.Text = "Finish Edit";
+            btnEditFinish.UseVisualStyleBackColor = true;
+            btnEditFinish.Click += btnEditFinish_Click;
             // 
             // FormMain
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(768, 450);
+            Controls.Add(btnEditFinish);
             Controls.Add(btnEdit);
             Controls.Add(btnClear);
             Controls.Add(btnDelete);
@@ -232,5 +245,6 @@
         private Button btnDelete;
         private Button btnClear;
         private Button btnEdit;
+        private Button btnEditFinish;
     }
 }

@@ -17,16 +17,21 @@ namespace MaUWinForms4
         private void InitializeGUI()
         {
             cmbFoodCategory.DataSource = Enum.GetValues(typeof(FoodCategory));
+            
+            btnEdit.Visible = false;
+            btnEditFinish.Visible = false;
+            btnDelete.Visible = false;
         }
         private void UpdateGUI()
         {
             txtNameRecipe.Text = string.Empty;
             txtDescription.Text = string.Empty;
 
-            string listboxString = String.Format("{0,-15} {1,-9} {2,10}  ",
-            currentRecipe.Name, currentRecipe.Category, currentRecipe.CurrentNumberOfIngredients());
-
-            lstRecipe.Items.Add(listboxString);
+            if (currentRecipe != null)
+            { 
+                btnEdit.Visible = true;
+                btnDelete.Visible = true;
+            }
         }
 
         private void btnAddRecipe_Click(object sender, EventArgs e)
@@ -38,6 +43,10 @@ namespace MaUWinForms4
                 currentRecipe.Category = (FoodCategory)cmbFoodCategory.SelectedItem;
 
                 recipeMngr.Add(currentRecipe);
+
+                string listboxString = String.Format("{0,-15} {1,-9} {2,10}  ",
+                currentRecipe.Name, currentRecipe.Category, currentRecipe.CurrentNumberOfIngredients());
+                lstRecipe.Items.Add(listboxString);
 
                 UpdateGUI();
 
@@ -62,6 +71,46 @@ namespace MaUWinForms4
                 }
             }
         }
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            if (lstRecipe.SelectedIndex >= 0)
+            {
+                currentRecipe = recipeMngr.GetRecipeAt(lstRecipe.SelectedIndex);
+
+                if (currentRecipe != null)
+                {
+                    txtNameRecipe.Text = currentRecipe.Name;
+                    txtDescription.Text = currentRecipe.Description;
+                    cmbFoodCategory.SelectedItem = currentRecipe.Category;
+
+                    FormIngredients formIngredients = new FormIngredients(currentRecipe);
+                    formIngredients.Text = currentRecipe.Name;
+
+                }
+
+                btnAddRecipe.Visible = false;
+                btnEditFinish.Visible = true;
+            }
+        }
+        private void btnEditFinish_Click(object sender, EventArgs e)
+        {
+            if (lstRecipe.SelectedIndex >= 0)
+            {
+                currentRecipe.Name = txtNameRecipe.Text;
+                currentRecipe.Description = txtDescription.Text;
+                currentRecipe.Category = (FoodCategory)cmbFoodCategory.SelectedItem;
+
+                recipeMngr.ChangeElement(lstRecipe.SelectedIndex, currentRecipe);
+
+                string listboxString = String.Format("{0,-15} {1,-9} {2,10}  ",
+                currentRecipe.Name, currentRecipe.Category, currentRecipe.CurrentNumberOfIngredients());
+
+                lstRecipe.Items[lstRecipe.SelectedIndex] = listboxString;
+
+                btnEditFinish.Visible = false;
+                UpdateGUI();
+            }
+        }
         private void btnDelete_Click(object sender, EventArgs e)
         {
             if (lstRecipe.SelectedIndex >= 0)
@@ -69,7 +118,6 @@ namespace MaUWinForms4
                 recipeMngr.DeleteElement(lstRecipe.SelectedIndex);
                 lstRecipe.Items.Remove(lstRecipe.SelectedItem);
             }
-
         }
         private void btnClear_Click(object sender, EventArgs e)
         {
