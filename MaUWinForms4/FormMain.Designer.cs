@@ -128,6 +128,7 @@
             // 
             // lstRecipe
             // 
+            lstRecipe.Font = new Font("Courier New", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lstRecipe.FormattingEnabled = true;
             lstRecipe.ItemHeight = 15;
             lstRecipe.Location = new Point(396, 46);
@@ -139,7 +140,7 @@
             // lblListName
             // 
             lblListName.AutoSize = true;
-            lblListName.Location = new Point(408, 22);
+            lblListName.Location = new Point(400, 22);
             lblListName.Name = "lblListName";
             lblListName.Size = new Size(39, 15);
             lblListName.TabIndex = 2;
@@ -148,7 +149,7 @@
             // lblListCategory
             // 
             lblListCategory.AutoSize = true;
-            lblListCategory.Location = new Point(524, 22);
+            lblListCategory.Location = new Point(519, 22);
             lblListCategory.Name = "lblListCategory";
             lblListCategory.Size = new Size(55, 15);
             lblListCategory.TabIndex = 3;
@@ -157,7 +158,7 @@
             // lblNumOfIngredients
             // 
             lblNumOfIngredients.AutoSize = true;
-            lblNumOfIngredients.Location = new Point(640, 22);
+            lblNumOfIngredients.Location = new Point(639, 22);
             lblNumOfIngredients.Name = "lblNumOfIngredients";
             lblNumOfIngredients.Size = new Size(102, 15);
             lblNumOfIngredients.TabIndex = 4;

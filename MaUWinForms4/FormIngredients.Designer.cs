@@ -66,6 +66,7 @@
             // 
             // lstIngredients
             // 
+            lstIngredients.Font = new Font("Courier New", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lstIngredients.FormattingEnabled = true;
             lstIngredients.ItemHeight = 15;
             lstIngredients.Location = new Point(6, 51);

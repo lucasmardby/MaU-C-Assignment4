@@ -46,12 +46,17 @@
         }
         private void btnOk_Click(object sender, EventArgs e)
         {
-            // change to addIngredients on OK click
-
             this.Close();
         }
         private void btnCancel_Click(object sender, EventArgs e)
         {
+            for (int i = 0; i < Recipe.CurrentNumberOfIngredients(); i++)
+            {
+                Recipe.DeleteIngredient(i);
+            }
+
+            lstIngredients.Items.Clear();
+
             this.Close();
         }
         private void btnEdit_Click(object sender, EventArgs e)
