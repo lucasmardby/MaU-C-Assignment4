@@ -46,7 +46,7 @@
         }
         private void btnOk_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Close();
         }
         private void btnCancel_Click(object sender, EventArgs e)
         {
@@ -57,7 +57,7 @@
 
             lstIngredients.Items.Clear();
 
-            this.Close();
+            Close();
         }
         private void btnEdit_Click(object sender, EventArgs e)
         {

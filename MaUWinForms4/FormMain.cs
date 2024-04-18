@@ -107,6 +107,7 @@ namespace MaUWinForms4
 
                 lstRecipe.Items[lstRecipe.SelectedIndex] = listboxString;
 
+                btnAddRecipe.Visible = true;
                 btnEditFinish.Visible = false;
                 UpdateGUI();
             }
@@ -125,8 +126,11 @@ namespace MaUWinForms4
 
             if (btnEditFinish.Visible == true)
             {
-                ////
+                txtNameRecipe.Text = string.Empty;
+                txtDescription.Text = string.Empty;
+                cmbFoodCategory.SelectedItem = FoodCategory.RiceBowl;
 
+                btnAddRecipe.Visible = true;
                 btnEditFinish.Visible = false;
             }
 
