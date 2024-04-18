@@ -1,19 +1,29 @@
 namespace MaUWinForms4
 {
+    /// <summary>
+    /// MainForm Class
+    /// </summary>
     public partial class FormMain : Form
     {
+        //Instance variables, constant numbers and objects
         const int maxNumberOfElements = 50;
         const int maxNumberOfIngredients = 200;
 
         private Recipe currentRecipe = new Recipe(maxNumberOfIngredients);
         private RecipeManager recipeMngr = new RecipeManager(maxNumberOfElements);
 
+        /// <summary>
+        /// FormMain(), initializing the Form and GUI
+        /// </summary>
         public FormMain()
         {
             InitializeComponent();
             InitializeGUI();
         }
 
+        /// <summary>
+        /// Fixes the GUI, clearing listbox, setting the combobox, and hiding buttons for use
+        /// </summary>
         private void InitializeGUI()
         {
             lstRecipe.Items.Clear();
@@ -23,6 +33,10 @@ namespace MaUWinForms4
             btnEditFinish.Visible = false;
             btnDelete.Visible = false;
         }
+        /// <summary>
+        /// Updates the GUI after adding or editing a recipe, clearing the textboxes,
+        /// and if a recipe is passed for editing, reveals the appropriate buttons
+        /// </summary>
         private void UpdateGUI()
         {
             txtNameRecipe.Text = string.Empty;
@@ -35,6 +49,13 @@ namespace MaUWinForms4
             }
         }
 
+        /// <summary>
+        /// Adds recipe from user-input information into the recipeManager, and text into the listbox,
+        /// before creating a new currentRecipe
+        /// Gives an error if no ingredients are specified
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnAddRecipe_Click(object sender, EventArgs e)
         {
             if (currentRecipe.CurrentNumberOfIngredients() > 0)
@@ -59,6 +80,12 @@ namespace MaUWinForms4
             }
 
         }
+        /// <summary>
+        /// Opens FormIngredients() to add ingredients to the recipe
+        /// Gives an error if no ingredients are specified
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnAddIngredient_Click(object sender, EventArgs e)
         {
             FormIngredients dlg = new FormIngredients(currentRecipe);
@@ -72,6 +99,12 @@ namespace MaUWinForms4
                 }
             }
         }
+        /// <summary>
+        /// Edits the selected recipe, inserting its information into the textboxes and FormIngredients
+        /// Reveals finish-edit button 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnEdit_Click(object sender, EventArgs e)
         {
             if (lstRecipe.SelectedIndex >= 0)
@@ -92,6 +125,11 @@ namespace MaUWinForms4
                 btnEditFinish.Visible = true;
             }
         }
+        /// <summary>
+        /// Passes the new, edited information into the selected recipe
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnEditFinish_Click(object sender, EventArgs e)
         {
             if (lstRecipe.SelectedIndex >= 0)
@@ -112,6 +150,11 @@ namespace MaUWinForms4
                 UpdateGUI();
             }
         }
+        /// <summary>
+        /// Deletes the selected recipe
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnDelete_Click(object sender, EventArgs e)
         {
             if (lstRecipe.SelectedIndex >= 0)
@@ -120,6 +163,11 @@ namespace MaUWinForms4
                 lstRecipe.Items.Remove(lstRecipe.SelectedItem);
             }
         }
+        /// <summary>
+        /// Clears and unselects the selected recipe, and resets any input recipe information 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnClear_Click(object sender, EventArgs e)
         {
             lstRecipe.ClearSelected();
@@ -135,7 +183,11 @@ namespace MaUWinForms4
             }
 
         }
-
+        /// <summary>
+        /// Opens detailed information about a recipe if you double-click on it in the listbox
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void lstRecipe_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             Recipe recipe = recipeMngr.GetRecipeAt(lstRecipe.SelectedIndex);
